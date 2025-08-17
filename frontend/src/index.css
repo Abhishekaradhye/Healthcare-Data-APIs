@@ -1,0 +1,33 @@
+body {
+  background: url("/bg.jpg") center/cover no-repeat fixed;
+  font-family: Arial, sans-serif;
+}
+
+.panel {
+  max-width: 700px;   /* was 800px */
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #103962;   /* navy blue */
+  border-radius: 20px 0px 20px 0px;
+  box-shadow: 0 6px 18px rgba(27, 26, 26, 0.3);
+  color: #efd4cd;        /* light text */
+  font-family: 'Segoe UI', Roboto, sans-serif; /* better font */
+}
+
+textarea, select, button {
+  border-radius: 12px 0px 12px 0px; /* opposite corners curved */
+  border: none;
+  padding: 8px;
+  margin-top: 8px;
+}
+
+button {
+  background: #1d4ed8;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #2563eb;
+}
