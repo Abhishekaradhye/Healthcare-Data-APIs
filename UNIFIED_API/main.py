@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from patients_api import app as patients_app
-from finance_api import app as finance_app
-from staff_api import app as staff_app
+from patients_api import router as patients_app
+from finance_api import router as finance_app
+from staff_api import router as staff_app
 
 app = FastAPI(title="UNIFIED_API")
 
