@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from patients_api import router as patients_app
-from finance_api import router as finance_app
-from staff_api import router as staff_app
+from patients_api import router as patients_router
+from finance_api import router as finance_router
+from staff_api import router as staff_router
 
 app = FastAPI(title="UNIFIED_API")
 
@@ -15,6 +15,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.mount("/patients", patients_app)
-app.mount("/finance", finance_app)
-app.mount("/staff", staff_app)
+# ✅ include the routers instead of mount
+app.include_router(patients_router)
+app.include_router(finance_router)
+app.include_router(staff_router)
