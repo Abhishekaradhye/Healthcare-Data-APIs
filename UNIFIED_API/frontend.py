@@ -4,14 +4,10 @@ import uvicorn
 import threading
 from fastapi import FastAPI
 
-# Import routers
 from patients_api import router as patients_router
 from finance_api import router as finance_router
 from staff_api import router as staff_router
 
-# ------------------------------
-# Backend (FastAPI)
-# ------------------------------
 app = FastAPI(title="Unified API")
 app.include_router(patients_router)
 app.include_router(finance_router)
@@ -20,12 +16,8 @@ app.include_router(staff_router)
 def run_backend():
     uvicorn.run(app, host="127.0.0.1", port=8008, log_level="info")
 
-# Run backend in background thread
 threading.Thread(target=run_backend, daemon=True).start()
 
-# ------------------------------
-# Frontend (Streamlit)
-# ------------------------------
 st.title("Unified Data Search (Centralized)")
 
 API_ENDPOINTS = {
@@ -34,10 +26,8 @@ API_ENDPOINTS = {
     "Finance": "http://127.0.0.1:8008/finance/search_multiple"
 }
 
-# Select dataset
 option = st.radio("Choose dataset:", list(API_ENDPOINTS.keys()))
 
-# Input label changes dynamically
 if option == "Patients":
     label = "Enter patient_id:"
 elif option == "Staff":
@@ -69,3 +59,4 @@ if st.button("Search"):
             st.error(f"I guess something went wrong: \n{e}")
 
 # Run this file only: `streamlit run frontend.py`
+
