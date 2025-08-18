@@ -12,7 +12,7 @@
 
 [context.production.environment]
   # Add any environment variables your frontend needs
-  VITE_API_BASE_URL = "https://your-backend-render-url.com"
+  VITE_API_BASE_URL = "https://healthcare-data-apis.onrender.com/"
 
 # Optional: redirect all frontend routes to index.html for SPA routing
 [[redirects]]
