@@ -1,20 +1,15 @@
 # netlify.toml
 
 [build]
-  # Command to install dependencies and build frontend
   command = "npm install --legacy-peer-deps && npm run build"
-  
-  # Publish directory (where the built frontend files go)
   publish = "frontend/dist"
-
-  # Node.js version for Netlify
   node_version = "18"
 
 [context.production.environment]
-  # Add any environment variables your frontend needs
+  # API URL for frontend
   VITE_API_BASE_URL = "https://healthcare-data-apis.onrender.com/"
 
-# Optional: redirect all frontend routes to index.html for SPA routing
+# SPA routing redirect
 [[redirects]]
   from = "/*"
   to = "/index.html"
