@@ -1,8 +1,9 @@
 # netlify.toml
 
 [build]
-  command = "npm install --legacy-peer-deps && npm run build"
+  command = "cd frontend && npm install --legacy-peer-deps && npm run build"
   publish = "frontend/dist"
+
   node_version = "18"
 
 [context.production.environment]
